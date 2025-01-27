@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<bo
+    <div class="container">
+        <h1>Student Performance Prediction</h1>
+        <form action="/predict" method="POST">
+            <!-- Numeric Questions -->
+            <label for="question1">No. of Hours Studied</label>
+            <input type="number" id="question1" name="question1" required>
+
+            <label for="question2">Attendance</label>
+            <input type="number" id="question2" name="question2" required>
+
+            <label for="question3">Sleep Hours</label>
+            <input type="number" id="question3" name="question3" required>
+
+            <label for="question4">Previous Scores</label>
+            <input type="number" id="question4" name="question4" required>
+
+            <label for="question5">Tutoring Sessions</label>
+            <input type="number" id="question5" name="question5" required>
+
+            <label for="question6">Physical Activity</label>
+            <input type="number" id="question6" name="question6" required>
+
+            <!-- Multiple-Choice Questions -->
+            <label for="question7">Parental Involment</label>
+            <select id="question7" name="question7" required>
+                <option value ="" disabled selected hidden></option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <label for="question8">Access to Resources</label>
+            <select id="question8" name="question8" required>
+                <option value ="" disabled selected hidden></option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <label for="question9">Extracirricular Activities</label>
+            <select id="question9" name="question9" required>
+                <option value ="" disabled selected hidden></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p style="color:black">The predicted value is: {{results}} </p>
+    </div>
+</body>
+</html>
